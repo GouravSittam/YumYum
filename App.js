@@ -6,7 +6,8 @@ const heading = React.createElement(
   {
     id: "heading",
   },
-  "Namaste React"
+  "Namaste React"   
+  
 );
 
 const Header = () => {
