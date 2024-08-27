@@ -1,7 +1,10 @@
 import RestaurantCards from "./RestaurantCard";
 import resList from "../Utils/mockData";
+// import { useState } from "react";
 
 const Body = () => {
+  //State variable -super powerful variable
+  
   return (
     <div className="body">
       <div className="filter">
