@@ -16,6 +16,9 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
+
+    //optional chaining
+    // setListofRestraunt(json.data.cards[3].card.card.facetList.restaurantCount);
   };
 
   return (
