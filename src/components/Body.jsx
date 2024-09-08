@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const Body = () => {
   //State variable -super powerful variable
-  const [ListOfRestaurants, setListofRestraunt] = useState(resList);
+  const [ListOfRestaurants, setListofRestraunt] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -15,11 +15,12 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
 
     //optional chaining
-    // setListofRestraunt(json.data.cards[3].card.card.facetList.restaurantCount);
+    setListofRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
+  console.log(ListOfRestaurants);
+
 
   return (
     <div className="body">
@@ -28,7 +29,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = ListOfRestaurants.filter(
-              (res) => res.info.avgRating > 3
+              (res) => res.info.avgRating > 4.4
             );
             setListofRestraunt(filteredList);
           }}
@@ -38,7 +39,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {ListOfRestaurants.map((restaurant) => (
-          <RestaurantCards key={restaurant.info.id} resData={restaurant} />
+          <RestaurantCards key={restaurant?.info?.id} resData={restaurant} />
         ))}
       </div>
     </div>
