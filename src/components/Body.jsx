@@ -17,11 +17,20 @@ const Body = () => {
     const json = await data.json();
 
     //optional chaining
-    setListofRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setListofRestraunt(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
   console.log(ListOfRestaurants);
 
 
+
+  if (ListOfRestaurants.length === 0) {
+    return <h1>Loading......</h1>;
+  }
+
+
+  
   return (
     <div className="body">
       <div className="filter">
