@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   //State variable - super powerful variable
   const [ListOfRestaurants, setListofRestraunt] = useState([]);
-  const [filteredRestaurant, SetfilteredRestaurant]=useState([]);
+  const [filteredRestaurant, SetfilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
 
@@ -29,7 +29,6 @@ const Body = () => {
     SetfilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-
   };
   console.log(ListOfRestaurants);
 
