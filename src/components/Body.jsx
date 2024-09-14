@@ -1,6 +1,7 @@
 import RestaurantCards from "./RestaurantCard";
 import resList from "../Utils/mockData";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   //State variable -super powerful variable
@@ -23,14 +24,11 @@ const Body = () => {
   };
   console.log(ListOfRestaurants);
 
-
-
+  // Loading Data
   if (ListOfRestaurants.length === 0) {
-    return <h1>Loading......</h1>;
+    return <Shimmer />;
   }
 
-
-  
   return (
     <div className="body">
       <div className="filter">
