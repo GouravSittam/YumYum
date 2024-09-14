@@ -24,12 +24,10 @@ const Body = () => {
   };
   console.log(ListOfRestaurants);
 
-  // Loading Data
-  if (ListOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  // i do here conditional rendring
+  return ListOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
