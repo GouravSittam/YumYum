@@ -11,7 +11,7 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };
@@ -20,7 +20,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    children:[
+    children: [
       {
         path: "/",
         element: <Body />,
@@ -33,11 +33,9 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-
     ],
     errorElement: <Error />,
   },
-
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
