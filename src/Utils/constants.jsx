@@ -4,5 +4,3 @@ export const CDN_URl =
 export const LOGO_URL =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLI_uxIDAxCCK46tTEBxgIbto8Znd9-GBfQ&s";
 
-
-
