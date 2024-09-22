@@ -3,32 +3,46 @@ import Shimmer from "./Shimmer";
 // import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResinfo] = useState();
+  const [resInfo, setResInfo] = useState(null);
 
   useEffect(() => {
     fetchMenu();
   }, []);
 
   const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(json);
-    setResinfo(json.data);
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId=42060&catalog_qa=undefined&submitAction=ENTER"
+      );
+      const json = await response.json();
+      console.log(json);
+      setResInfo(json.data);
+    } catch (error) {
+      console.error("Error fetching menu:", error);
+    }
   };
 
   if (resInfo === null) return <Shimmer />;
-  //here i fetch the api 
+
+  // Extracting the restaurant information
+  const restaurant = resInfo?.cards?.find(card => card.card?.card?.info)?.card?.card?.info;
+  const { name, cuisines, costForTwoMessage } = restaurant || {};
+
+  // Extracting the menu items
+  const menuItems = resInfo?.cards?.find(card => card.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards?.flatMap(card => card.card?.card?.itemCards || []) || [];
 
   return (
     <div className="menu">
-      <h1></h1>
+      <h1>{name || "Restaurant Name"}</h1>
+      <h2>{cuisines ? cuisines.join(", ") : "Cuisines"}</h2>
+      <h2>{costForTwoMessage || "Cost for Two"}</h2>
       <h2>Menu</h2>
       <ul>
-        <li>Biryani</li>
-        <li>Burgers</li>
-        <li>Diet Coke</li>
+        {menuItems.map((item) => (
+          <li key={item.card.info.id}>
+            {item.card.info.name} - ₹{item.card.info.price / 100}
+          </li>
+        ))}
       </ul>
     </div>
   );
