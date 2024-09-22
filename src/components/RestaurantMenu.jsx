@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -29,28 +30,26 @@ const RestaurantMenu = () => {
   if (resInfo === null) return <Shimmer />;
 
   // Extracting the restaurant information
-  const restaurant = resInfo?.cards?.find((card) => card.card?.card?.info)?.card
-    ?.card?.info;
+  const restaurant = resInfo?.cards[2]?.card?.card?.info;
   const { name, cuisines, costForTwoMessage } = restaurant || {};
 
   // Extracting the menu items
   const menuItems =
-    resInfo?.cards
-      ?.find((card) => card.groupedCard)
-      ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.flatMap(
-        (card) => card.card?.card?.itemCards || []
-      ) || [];
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+      ?.itemCards || [];
 
   return (
     <div className="menu">
       <h1>{name || "Restaurant Name"}</h1>
-      <h2>{cuisines ? cuisines.join(", ") : "Cuisines"}</h2>
-      <h2>{costForTwoMessage || "Cost for Two"}</h2>
+      {/* <h2>{cuisines ? cuisines.join(", ") : "Cuisines"}</h2> */}
+      <p>
+        {cuisines.join(", ")}-{costForTwoMessage}
+      </p>
       <h2>Menu</h2>
       <ul>
         {menuItems.map((item) => (
           <li key={item.card.info.id}>
-            {item.card.info.name}-{"Rs."}
+            {item.card.info.name}-{" Rs."}
             {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
           </li>
         ))}
