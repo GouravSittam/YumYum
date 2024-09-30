@@ -10,16 +10,23 @@ class UserClass extends React.Component {
     }
 
   }
+
+componentDidMount(){
+    console.log("child componentDidMount")
+}
+
   render() {
     const { name } = this.props;
     const {count}=this.state;
+
+    console.log("child render")
     return (
       <div className="user-card">
         <h2>count: {count}</h2>
         <button onClick={()=>{
             //never state variable directly
             this.setState({
-                count: this.state.count+1, 
+                count: this.state.count+1,  
             })
         }}>Count Increase</button>
 
