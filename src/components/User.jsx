@@ -6,7 +6,9 @@ const user = ({ name }) => {
     //Api call
   },[])
 
-  
+
+
+
   return (
     <div className="user-card">
       <h2>count = {count}</h2>

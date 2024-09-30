@@ -5,37 +5,46 @@ class UserClass extends React.Component {
     super(props);
 
     this.state = {
-      count: 0,
+      userInfo: {
+        name: "Rudra",
+        location: "MP",
+        avatar_url: "",
+        bio:"",
+      },
     };
   }
 
-  componentDidMount() {
-    console.log("child componentDidMount");
+  async componentDidMount() {
+    // console.log("child componentDidMount");
 
-    //here we call the api
+    // Here we call the API
+    try {
+      const data = await fetch("https://api.github.com/users/GouravSittam");
+      const json = await data.json(); // Await the json() method
+
+      // Update user data
+      this.setState({
+        userInfo: json,
+      });
+
+      console.log(json);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
   }
 
   render() {
-    const { name } = this.props;
-    const { count } = this.state;
+    // const { name } = this.props;
+    const { name, location,avatar_url,bio } = this.state.userInfo;
 
-    console.log("child render");
+    // console.log("child render");
     return (
       <div className="user-card">
-        <h2>count: {count}</h2>
-        <button
-          onClick={() => {
-            //never state variable directly
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Count Increase
-        </button>
-
-        <h2>name: {name}</h2>
-        <h2>Location: Delhi</h2>
+        
+        <img src={avatar_url}/>
+        <h2>Bio: {bio}</h2>
+        <h2>Name: {name}</h2>
+        <h2>Location: {location}</h2>
         <h2>Age: 24</h2>
         <h2>Contact: @grv.com</h2>
       </div>

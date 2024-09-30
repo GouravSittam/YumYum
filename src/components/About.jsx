@@ -6,11 +6,11 @@ import { Component } from "react";
 class About extends Component {
   constructor(props) {
     super(props);
-    console.log("parent constructor");
+    // console.log("parent constructor");
   }
 
   componentDidMount(){
-    console.log("parent componet Didmount")
+    // console.log("parent componet Didmount")
   }
 
   render() {
@@ -20,7 +20,7 @@ class About extends Component {
         <h1>About</h1>
         <h2>This is an about page</h2>
         {/* <User name={"Gourav Chaudhary (function)"} /> */}
-        <UserClass name={"Gourav Chaudhary (class)"} />
+        <UserClass name={"Gourav"} location={"HP"} />
       </div>
     );
   }
