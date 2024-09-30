@@ -1,12 +1,15 @@
-const user = ({name}) =>{
-    return(
-        <div className="user-card">
-            <h2>name: {name}</h2>
-            <h2>Location: Delhi</h2>
-            <h2>Age: 24</h2>
+import { useState } from "react";
 
-
-        </div>
-    )
-}
+const user = ({ name }) => {
+  const [count] = useState(0);
+  return (
+    <div className="user-card">
+      <h2>count = {count}</h2>
+      <h2>name: {name}</h2>
+      <h2>Location: Delhi</h2>
+      <h2>Age: 24</h2>
+      <h2>Contact: @grv.com</h2>
+    </div>
+  );
+};
 export default user;
