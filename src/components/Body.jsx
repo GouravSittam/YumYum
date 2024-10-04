@@ -34,6 +34,8 @@ const Body = () => {
   };
   console.log(ListOfRestaurants);
 
+
+  //feature of offline and online
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
     return <h1>Looks like ur ofline!! please check ur internet connection</h1>;
