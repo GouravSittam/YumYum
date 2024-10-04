@@ -13,6 +13,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 //chunking
 //code splitting
 //dynamic Bundling
+//lazy loading
+//OnDemand Loading
+
 
 const AppLayout = () => {
   return (
