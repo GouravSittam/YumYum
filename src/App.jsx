@@ -8,6 +8,7 @@ import Error from "./components/Error";
 // import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+// import Test from "./components/Test";
 
               //  VERY IMPORTANT CONCEPTS
               
@@ -23,6 +24,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 const AppLayout = () => {
   return (
     <div className="app">
+      {/* <Test /> */}
       <Header />
       <Outlet />
     </div>

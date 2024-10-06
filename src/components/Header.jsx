@@ -19,25 +19,25 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL}></img>
+        <img className="w-56" src={LOGO_URL}></img>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-2">
             Online Status:{onlineStatus ? "✅" : "🔴"}
           </li>
-          <li>
+          <li className="px-2">
           <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-2">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="px-2">
           <Link to="/contact">Contact us</Link>
           </li>
-          <li>
+          <li className="px-2">
           <Link to="/cart">Cart</Link>
           </li>
           <button
