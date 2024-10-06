@@ -10,6 +10,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
               //  VERY IMPORTANT CONCEPTS
+              
 //chunking
 //Bundling
 //code splitting
