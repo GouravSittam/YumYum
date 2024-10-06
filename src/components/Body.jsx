@@ -34,7 +34,6 @@ const Body = () => {
   };
   console.log(ListOfRestaurants);
 
-
   //feature of offline and online
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
@@ -44,8 +43,9 @@ const Body = () => {
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
+    
     <div className="body">
-      <div className="filter">
+      <div className="filter flex">
         <div className="search m-4 p-4">
           <input
             type="text"
@@ -55,7 +55,8 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button className="px-4 py-2 bg-green-100 m-4"
+          <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               //filter the resturant cards and update the UI
               //Search text
@@ -71,19 +72,21 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = ListOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.4
-            );
-            setListofRestraunt(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 bg-gray-100"
+            onClick={() => {
+              const filteredList = ListOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.4
+              );
+              setListofRestraunt(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant?.info?.id}
