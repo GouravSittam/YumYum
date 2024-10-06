@@ -5,20 +5,19 @@ const RestaurantCards = (props) => {
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resData?.info;
   return (
-    <div className="m-4 p-4 w-[300px] rounded-lg" style={{ backgroundColor: "#f0f0f0" }}>
+    <div
+      className="m-4 p-6 w-[300px] rounded-lg bg-white shadow-lg hover:shadow-xl transition-transform transform hover:scale-105"
+    >
       <img
-        className="rounded-lg"
+        className="rounded-lg shadow-md transition-transform transform hover:scale-105"
         alt="res-logo"
-        src={CDN_URl
-          +
-          resData.info.cloudinaryImageId
-        }
+        src={CDN_URl + resData.info.cloudinaryImageId}
       ></img>
-      <h3 className="font-bold py-4 text-lg">{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{resData.info.sla.deliveryTime} minutes</h4>
+      <h3 className="font-bold py-4 text-lg text-gray-800">{name}</h3>
+      <h4 className="text-gray-600">{cuisines.join(", ")}</h4>
+      <h4 className="text-yellow-500 font-semibold">{avgRating} stars</h4>
+      <h4 className="text-gray-700">{costForTwo}</h4>
+      <h4 className="text-gray-500">{resData.info.sla.deliveryTime} minutes</h4>
     </div>
   );
 };

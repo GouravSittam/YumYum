@@ -49,7 +49,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box border-solid border-black"
+            className="search-box border border-gray-300 rounded-lg shadow-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
