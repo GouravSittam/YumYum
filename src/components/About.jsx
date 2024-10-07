@@ -8,11 +8,9 @@ class About extends Component {
     super(props);
     // console.log("parent constructor");
   }
-
   componentDidMount() {
     // console.log("parent component DidMount")
   }
-
   render() {
     console.log("parent Render");
     return (
