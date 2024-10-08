@@ -22,4 +22,8 @@ const RestaurantCards = (props) => {
   );
 };
 
+// Higher Order Compenent 
+// Input - RestaurantCards=> RestaurantCardPromoted
+
+
 export default RestaurantCards;
