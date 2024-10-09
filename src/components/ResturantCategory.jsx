@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
 import ItemList from "./ItemList";
 
 const ResturantCategory = ({ data }) => {
-//   console.log(data);
+  console.log(data);
   return (
     <div>
       {/** Header */}
@@ -13,7 +13,7 @@ const ResturantCategory = ({ data }) => {
         </span>
         <span>⬇️</span>
         </div>
-        <ItemList item={data.itemCards} />
+        <ItemList items={data.itemCards} />
       </div>
       {/** Accordian body */}
     </div>
