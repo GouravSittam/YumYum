@@ -1,14 +1,15 @@
 // import React from "react";
 import {useState} from "react";
 import ItemList from "./ItemList";
-//1:33:38
+//2:11:01
 
-const ResturantCategory = ({ data }) => {
+const ResturantCategory = ({ data, showItems, SetShowIndex }) => {
 
-  const [showItems, SetShowItems]=useState(false);
+  // const [showItems, SetShowItems]=useState(false);
   // console.log(data);
   const handleClick = () => {
-    SetShowItems(!showItems);
+    // SetShowItems(!showItems);
+    SetShowIndex();
   };
   return (
     <div>

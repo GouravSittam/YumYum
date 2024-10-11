@@ -10,6 +10,7 @@
   "author": "Gourav Chaudhary",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^18.3.11",
     "parcel": "^2.12.0",
     "postcss": "^8.4.47",
     "prettier": "3.3.3",
