@@ -2,6 +2,7 @@ import { createContext } from "react";
 
 
 const UserContext= createContext({
-    loggedInUser:"Default User",
+    loggedInUser:"Gobu",
 });
 export default UserContext;
+//2:42:53
