@@ -17,7 +17,7 @@ const Header = () => {
 
   //subscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   //if no dependency array => useEffect is called on every render
   //if dependency array is empty = [] => useEffect is called on initial render(just once)
@@ -27,7 +27,7 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className="flex justify-between bg-pink-100 shadow-lg">
+    <div className="sticky top-0 z-50 flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">
         <img className="w-56" src={LOGO_URL}></img>
       </div>
