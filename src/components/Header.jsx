@@ -8,19 +8,16 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("login");
-  console.log("Header Render"); 
+  console.log("Header Render");
 
-  const onlineStatus=useOnlineStatus();
+  const onlineStatus = useOnlineStatus();
 
-  const {loggedInUser}=useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
   // console.log(loggedInUser);
 
   //subscribing to the store using a selector
-  const cartItems=useSelector((store)=>store.cart.items);
-  console.log(cartItems)
-
-
-
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   //if no dependency array => useEffect is called on every render
   //if dependency array is empty = [] => useEffect is called on initial render(just once)
@@ -36,20 +33,18 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
+          <li className="px-2">Online Status:{onlineStatus ? "✅" : "🔴"}</li>
           <li className="px-2">
-            Online Status:{onlineStatus ? "✅" : "🔴"}
-          </li>
-          <li className="px-2">
-          <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="px-2">
             <Link to="/about">About</Link>
           </li>
           <li className="px-2">
-          <Link to="/contact">Contact us</Link>
+            <Link to="/contact">Contact us</Link>
           </li>
           <li className="px-3  font-bold text-xl">
-          <Link to="/cart">Cart({cartItems.length}items)</Link>
+            <Link to="/cart">Cart({cartItems.length}items)</Link>
           </li>
           <button
             className="btn"
