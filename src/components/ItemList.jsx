@@ -8,7 +8,7 @@ const ItemList = ({ items }) => {
   const dispatch = useDispatch();
 
   const handelAddItem = (item) => {
-    //Dispached an action(1:30:30)here i start the video 2mrw
+    //Dispached an action
     dispatch(addItem(item));
   };
 
