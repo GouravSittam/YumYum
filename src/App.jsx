@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import AppStore from "./Utils/AppStore";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 // import Test from "./components/Test";
 
 //  VERY IMPORTANT CONCEPTS
@@ -29,6 +30,7 @@ const AppLayout = () => {
         {/* <Test /> */}
         <Header />
         <Outlet />
+        {/* <Footer /> */}
       </div>
     </Provider>
   );
