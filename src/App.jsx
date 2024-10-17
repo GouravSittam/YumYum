@@ -5,15 +5,15 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-// import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import AppStore from "./Utils/AppStore";
+import Cart from "./components/Cart";
 // import Test from "./components/Test";
 
-              //  VERY IMPORTANT CONCEPTS
-              
+//  VERY IMPORTANT CONCEPTS
+
 //chunking
 //Bundling
 //code splitting
@@ -22,15 +22,14 @@ import AppStore from "./Utils/AppStore";
 //OnDemand Loading
 // Dynamic Import
 
-
 const AppLayout = () => {
   return (
     <Provider store={AppStore}>
-    <div className="app">
-      {/* <Test /> */}
-      <Header />
-      <Outlet />
-    </div>
+      <div className="app">
+        {/* <Test /> */}
+        <Header />
+        <Outlet />
+      </div>
     </Provider>
   );
 };
@@ -55,6 +54,10 @@ const appRouter = createBrowserRouter([
       {
         path: "restaurants/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

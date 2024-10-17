@@ -3,13 +3,13 @@ import { addItem } from "../Utils/CartSlices";
 
 // import { CDN_URl } from "../Utils/constants";
 const ItemList = ({ items }) => {
-  // console.log(items);
+  console.log(items);
 
   const dispatch = useDispatch();
 
-  const handelAddItem = () => {
+  const handelAddItem = (item) => {
     //Dispached an action(1:30:30)here i start the video 2mrw
-    dispatch(addItem("cart"));
+    dispatch(addItem(item));
   };
 
   return (
@@ -35,7 +35,7 @@ const ItemList = ({ items }) => {
             <div className="absolute">
               <button
                 className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg "
-                onClick={handelAddItem}
+                onClick={()=>handelAddItem(item)}
               >
                 Add+
               </button>
