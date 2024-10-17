@@ -7,7 +7,11 @@ const CartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      //mutating the state here
+      //Vanilla(ilder) redus => Don't mutating the state here
+     
+     
+      //Redux Toolkit 
+     //we have to  mutatte the state
       state.items.push(action.payload);
     },
     removeItem: (state) => {
