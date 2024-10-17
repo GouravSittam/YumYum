@@ -30,7 +30,7 @@ const AppLayout = () => {
         {/* <Test /> */}
         <Header />
         <Outlet />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Provider>
   );

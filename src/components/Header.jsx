@@ -26,7 +26,7 @@ const Header = () => {
   }, [btnNameReact]);
 
   return (
-    <div className=" flex justify-between items-center bg-gradient-to-r from-pink-100 to-pink-200 shadow-lg p-4">
+    <div className=" flex justify-between items-center bg-gradient-to-r from-pink-100 to-pink-100 shadow-lg p-4">
       <div className="logo-container">
         <img className="w-56 rounded-full shadow-md" src={LOGO_URL} alt="Logo" />
       </div>
