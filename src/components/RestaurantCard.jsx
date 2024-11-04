@@ -7,6 +7,7 @@ const RestaurantCards = (props) => {
   const { resData } = props;
 
   const {loggedInUser}=useContext(UserContext);
+  
 
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resData?.info;
