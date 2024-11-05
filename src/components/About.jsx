@@ -1,106 +1,121 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, Phone, MapPin, Code, User, Briefcase } from 'lucide-react';
 
 const AboutMe = () => {
+  const [activeTab, setActiveTab] = useState('about');
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-pink-100">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg mx-auto">
-        <h1 className="text-3xl font-bold text-pink-700 mb-4 text-center">About Me</h1>
-        <div className="flex justify-center mb-4">
-          <button className="px-4 py-2 bg-pink-500 text-white rounded-full focus:outline-none">About</button>
-          <button className="px-4 py-2 ml-2 bg-pink-100 text-pink-500 rounded-full focus:outline-none">Skills</button>
-        </div>
-        <div className="bg-pink-50 p-4 rounded-lg shadow-md">
-          <div className="flex items-center mb-4">
-            <div className="w-16 h-16 bg-pink-200 rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 19.121A4.967 4.967 0 014 16.5 4.967 4.967 0 015.121 13.88M8 12h.01M12 12h.01M16 12h.01M21 12h.01M21 16.5a4.967 4.967 0 01-1.121 2.621M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2M16.5 3a4.5 4.5 0 00-9 0v1a4.5 4.5 0 009 0V3z" />
-              </svg>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100 py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
+          {/* Profile Header */}
+          <div className="flex flex-col items-center mb-8">
+            <div className="w-32 h-32 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full p-1 mb-4 shadow-lg hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-full bg-white rounded-full p-2">
+                <div className="w-full h-full bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center">
+                  <User size={40} className="text-white" />
+                </div>
+              </div>
             </div>
-            <div className="ml-4">
-              <h2 className="text-2xl font-bold text-pink-700">Gourav Chaudhary</h2>
-              <p className="text-pink-500">Himachal Pradesh, India</p>
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+              Gourav Chaudhary
+            </h1>
+            <div className="flex items-center mt-2 text-gray-600">
+              <MapPin size={16} className="mr-1" />
+              <span>Himachal Pradesh, India</span>
             </div>
           </div>
-          <p className="text-gray-700 mb-4">
-            Passionate developer with a love for creating beautiful and functional web applications.
-            Always eager to learn and explore new technologies.
-          </p>
-          <ul className="text-pink-500">
-            <li className="flex items-center mb-2">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8a6 6 0 11-12 0 6 6 0 0112 0zm6 16v-1a3 3 0 00-3-3H5a3 3 0 00-3 3v1" />
-              </svg>
-              gourav@example.com
-            </li>
-            <li className="flex items-center mb-2">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h2l1 2 4 5H7l1-2-4-5zm0 0l4-4m6 4l4 4m-4-4L7 6m12 0a4 4 0 100-8 4 4 0 000 8zm4 4h-6v6m0 0H4a2 2 0 01-2-2V4a2 2 0 012-2h6m0 0h6a2 2 0 012 2v6z" />
-              </svg>
-              +91 98765 43210
-            </li>
-            <li className="flex items-center mb-2">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387v-8.043H5.897V12h2.308V9.413c0-2.28 1.343-3.539 3.396-3.539.979 0 2 .177 2 .177v2.209h-1.127c-1.11 0-1.456.691-1.456 1.4V12h2.478l-.396 3.343h-2.082V24C20.562 21.8 24 17.303 24 12c0-6.627-5.373-12-12-12z" />
-              </svg>
-              github.com/gourav
-            </li>
-            <li className="flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h2l1 2 4 5H7l1-2-4-5zm0 0l4-4m6 4l4 4m-4-4L7 6m12 0a4 4 0 100-8 4 4 0 000 8zm4 4h-6v6m0 0H4a2 2 0 01-2-2V4a2 2 0 012-2h6m0 0h6a2 2 0 012 2v6z" />
-              </svg>
-              linkedin.com/in/gourav
-            </li>
-          </ul>
+
+          {/* Navigation Tabs */}
+          <div className="flex justify-center space-x-4 mb-8">
+            {['about', 'skills', 'experience'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  activeTab === tab
+                    ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg transform scale-105'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
+
+          {/* Content Sections */}
+          <div className="bg-white rounded-2xl p-6 shadow-lg">
+            {activeTab === 'about' && (
+              <div className="space-y-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Passionate developer with a love for creating beautiful and functional web applications.
+                  Always eager to learn and explore new technologies. Specialized in modern web development
+                  practices and user-centric design principles.
+                </p>
+                
+                {/* Contact Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                  <ContactItem icon={<Mail className="text-pink-500" />} text="gourav@example.com" />
+                  <ContactItem icon={<Phone className="text-pink-500" />} text="+91 98765 43210" />
+                  <ContactItem icon={<Github className="text-pink-500" />} text="github.com/gourav" />
+                  <ContactItem icon={<Linkedin className="text-pink-500" />} text="linkedin.com/in/gourav" />
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'skills' && (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <SkillCard title="Frontend" icon={<Code />} skills={['React', 'HTML5', 'CSS3', 'JavaScript']} />
+                <SkillCard title="Backend" icon={<Code />} skills={['Node.js', 'Express', 'MongoDB', 'SQL']} />
+                <SkillCard title="Tools" icon={<Briefcase />} skills={['Git', 'VS Code', 'Figma', 'Docker']} />
+              </div>
+            )}
+
+            {activeTab === 'experience' && (
+              <div className="space-y-6">
+                <ExperienceCard 
+                  title="FullStack Developer"
+                  company="Apni Hi Company Hai"
+                  duration="2024 - Present"
+                  description="Developed responsive web applications using React and Node.js."
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
+const ContactItem = ({ icon, text }) => (
+  <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-pink-50 transition-colors duration-300">
+    {icon}
+    <span className="text-gray-700">{text}</span>
+  </div>
+);
+
+const SkillCard = ({ title, icon, skills }) => (
+  <div className="p-4 bg-gray-50 rounded-xl hover:bg-pink-50 transition-colors duration-300">
+    <div className="flex items-center space-x-2 mb-3">
+      <span className="text-pink-500">{icon}</span>
+      <h3 className="font-semibold text-gray-700">{title}</h3>
+    </div>
+    <ul className="space-y-2">
+      {skills.map((skill) => (
+        <li key={skill} className="text-gray-600">{skill}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+const ExperienceCard = ({ title, company, duration, description }) => (
+  <div className="p-4 bg-gray-50 rounded-xl hover:bg-pink-50 transition-colors duration-300">
+    <h3 className="font-semibold text-gray-800">{title}</h3>
+    <div className="text-pink-500">{company}</div>
+    <div className="text-gray-500 text-sm">{duration}</div>
+    <p className="text-gray-600 mt-2">{description}</p>
+  </div>
+);
+
 export default AboutMe;
-
-
-
-// // import User from "./User";
-// // import { render } from "react-dom";
-// import UserClass from "./UserClass";
-// import { Component} from "react";
-
-// class About extends Component {
-//   constructor(props) {
-//     super(props);
-//     // console.log("parent constructor");
-//   }
-//   componentDidMount() {
-//     // console.log("parent component DidMount")
-//   }
-//   render() {
-//     console.log("parent Render");
-//     return (
-//       <div className="min-h-screen bg-gradient-to-r from-pink-100 to-pink-200 flex flex-col items-center justify-center p-6">
-//         <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
-//           <h1 className="text-4xl font-bold text-pink-700 mb-4 text-center">About</h1>
-//           <h2 className="text-2xl font-semibold text-pink-600 mb-6 text-center">This is an about page</h2>
-//           {/* <User name={"Gourav Chaudhary (function)"} /> */}
-//           <UserClass name={"Gourav"} location={"HP"} />
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default About;
-
-
-// const About=()=>{
-//     return(
-//         <div>
-//         <h1>About</h1>
-//         <h2>This is a about page</h2>
-//         {/* <User name={"Gourav Chaudhary (function)"} /> */}
-
-//         <UserClass name={"Gourav chaudhary (class)"}/>
-//         </div>
-//     );
-// };
-// export default About;
