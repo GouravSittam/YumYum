@@ -5,7 +5,7 @@ const AboutMe = () => {
   const [activeTab, setActiveTab] = useState('about');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100 py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-100 py-20 px-4 ">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-xl">
           {/* Profile Header */}
