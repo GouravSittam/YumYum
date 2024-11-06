@@ -20,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative">
+    <footer className="relative my-20 mx-0">
       {/* Decorative Top Wave */}
       <div className="absolute top-0 left-0 right-0 transform -translate-y-full">
         <svg 
@@ -119,7 +119,7 @@ const Footer = () => {
               <div className="flex items-center text-gray-600">
                 <span>© 2024 Foodie's Hub. Made with</span>
                 <Heart className="w-4 h-4 mx-2 text-pink-500 animate-pulse" />
-                <span>by Gourav</span>
+                <span>by Gourav Chaudhary</span>
               </div>
 
               {/* Scroll to top button */}
