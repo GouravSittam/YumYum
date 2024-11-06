@@ -59,28 +59,33 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="space-y-6">
-              <h4 className="text-xl font-semibold text-pink-600">Quick Links</h4>
-              <ul className="space-y-4">
-                {['Home', 'About Us', 'Services', 'Contact'].map((item) => (
-                  <li key={item}>
-                    <Link 
-                      to="/" 
-                      className="text-gray-600 hover:text-pink-600 transition-colors duration-300 flex items-center group"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <h4 className="text-xl font-semibold text-pink-600">Quick Links</h4>
+      <ul className="space-y-4">
+        {[
+          { name: 'Home', path: '/' },
+          { name: 'About Us', path: '/about' },
+          { name: 'Services', path: '/' },
+          { name: 'Contact', path: '/contact' }
+        ].map((item) => (
+          <li key={item.name}>
+            <Link 
+              to={item.path} 
+              className="text-gray-600 hover:text-pink-600 transition-colors duration-300 flex items-center group"
+            >
+              <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
 
             {/* Contact Info */}
             <div className="space-y-6">
               <h4 className="text-xl font-semibold text-pink-600">Contact Us</h4>
               <ul className="space-y-4">
                 <ContactItem icon={<MapPin />} text="123 Food Street, Foodie City, FC 12345" />
-                <ContactItem icon={<Phone />} text="+1 234 567 8900" />
+                <ContactItem icon={<Phone />} text="+91 7018389596" />
                 <ContactItem icon={<Mail />} text="info@foodieshub.com" />
               </ul>
             </div>
