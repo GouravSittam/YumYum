@@ -56,7 +56,7 @@ const Header = () => {
           {/* Logo Section */}
           <div className="flex items-center">
             <img 
-              className="w-20 h-20 md:w-28 md:h-28 object-contain transition-transform duration-300 hover:scale-105" 
+              className="w-20 h-25 md:w-28 md:h-28 object-contain transition-transform duration-300 hover:scale-105" 
               src={LOGO_URL}
               alt="Logo" 
             />
