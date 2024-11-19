@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import AppStore from "./Utils/AppStore";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
+import PaymentSystem from "./components/Payment";
 // import Footer from "./components/Footer";
 // import Test from "./components/Test";
 
@@ -62,6 +63,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/payment",
+        element: <PaymentSystem />,
       },
     ],
     errorElement: <Error />,
