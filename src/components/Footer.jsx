@@ -20,11 +20,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative my-20 mx-0">
+    <footer className="relative my-12 md:my-20 mx-0">
       {/* Decorative Top Wave */}
       <div className="absolute top-0 left-0 right-0 transform -translate-y-full">
         <svg 
-          className="w-full h-24" 
+          className="w-full h-16 md:h-24" 
           viewBox="0 0 1440 100" 
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -36,54 +36,54 @@ const Footer = () => {
       </div>
 
       <div className="bg-pink-50">
-        <div className="max-w-7xl mx-auto px-4 pt-20 pb-8">
+        <div className="max-w-7xl mx-auto px-4 pt-16 md:pt-20 pb-6 md:pb-8">
           {/* Main Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             {/* About Section */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-pink-600 font-serif">
+            <div className="space-y-4 md:space-y-6">
+              <h3 className="text-xl md:text-2xl font-bold text-pink-600 font-serif">
                 Foodie's Hub
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                 Discover the best food and drinks in your area. We make it easy to satisfy 
                 your cravings, delivering delicious possibilities every day.
               </p>
-              <div className="flex space-x-4">
-                <SocialIcon icon={<Facebook size={18} />} href="#" />
-                <SocialIcon icon={<Twitter size={18} />} href="#" />
-                <SocialIcon icon={<Instagram size={18} />} href="#" />
-                <SocialIcon icon={<Linkedin size={18} />} href="#" />
-                <SocialIcon icon={<Youtube size={18} />} href="#" />
+              <div className="flex space-x-3 md:space-x-4">
+                <SocialIcon icon={<Facebook size={16} className="md:w-5 md:h-5" />} href="#" />
+                <SocialIcon icon={<Twitter size={16} className="md:w-5 md:h-5" />} href="#" />
+                <SocialIcon icon={<Instagram size={16} className="md:w-5 md:h-5" />} href="#" />
+                <SocialIcon icon={<Linkedin size={16} className="md:w-5 md:h-5" />} href="#" />
+                <SocialIcon icon={<Youtube size={16} className="md:w-5 md:h-5" />} href="#" />
               </div>
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-6">
-      <h4 className="text-xl font-semibold text-pink-600">Quick Links</h4>
-      <ul className="space-y-4">
-        {[
-          { name: 'Home', path: '/' },
-          { name: 'About Us', path: '/about' },
-          { name: 'Services', path: '/' },
-          { name: 'Contact', path: '/contact' }
-        ].map((item) => (
-          <li key={item.name}>
-            <Link 
-              to={item.path} 
-              className="text-gray-600 hover:text-pink-600 transition-colors duration-300 flex items-center group"
-            >
-              <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+            <div className="space-y-4 md:space-y-6">
+              <h4 className="text-lg md:text-xl font-semibold text-pink-600">Quick Links</h4>
+              <ul className="space-y-3 md:space-y-4">
+                {[
+                  { name: 'Home', path: '/' },
+                  { name: 'About Us', path: '/about' },
+                  { name: 'Services', path: '/' },
+                  { name: 'Contact', path: '/contact' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link 
+                      to={item.path} 
+                      className="text-gray-600 hover:text-pink-600 transition-colors duration-300 flex items-center group text-sm md:text-base"
+                    >
+                      <ExternalLink className="w-3 h-3 md:w-4 md:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Contact Info */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold text-pink-600">Contact Us</h4>
-              <ul className="space-y-4">
+            <div className="space-y-4 md:space-y-6">
+              <h4 className="text-lg md:text-xl font-semibold text-pink-600">Contact Us</h4>
+              <ul className="space-y-3 md:space-y-4">
                 <ContactItem icon={<MapPin />} text="123 Food Street, Foodie City, FC 12345" />
                 <ContactItem icon={<Phone />} text="+91 7018389596" />
                 <ContactItem icon={<Mail />} text="info@foodieshub.com" />
@@ -91,9 +91,9 @@ const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold text-pink-600">Newsletter</h4>
-              <p className="text-gray-600">
+            <div className="space-y-4 md:space-y-6">
+              <h4 className="text-lg md:text-xl font-semibold text-pink-600">Newsletter</h4>
+              <p className="text-gray-600 text-sm md:text-base">
                 Subscribe to our newsletter for the latest updates and offers.
               </p>
               <form className="space-y-3">
@@ -101,15 +101,15 @@ const Footer = () => {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 rounded-lg bg-white border-2 border-pink-100 focus:outline-none focus:border-pink-400 transition-colors duration-300 placeholder-gray-400"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-white border-2 border-pink-100 focus:outline-none focus:border-pink-400 transition-colors duration-300 placeholder-gray-400 text-sm md:text-base"
                   />
-                  <div className="absolute right-3 top-3 text-pink-400">
-                    <Mail size={20} />
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-pink-400">
+                    <Mail size={16} className="md:w-5 md:h-5" />
                   </div>
                 </div>
                 <button 
                   type="submit"
-                  className="w-full px-6 py-3 bg-pink-500 text-white rounded-lg font-semibold hover:bg-pink-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full px-4 md:px-6 py-2 md:py-3 bg-pink-500 text-white rounded-lg font-semibold hover:bg-pink-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base"
                 >
                   Subscribe Now
                 </button>
@@ -118,21 +118,21 @@ const Footer = () => {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-pink-100 pt-8 mt-8">
+          <div className="border-t border-pink-100 pt-6 md:pt-8 mt-6 md:mt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {/* Copyright */}
-              <div className="flex items-center text-gray-600">
+              <div className="flex items-center text-gray-600 text-sm md:text-base">
                 <span>© 2024 Foodie's Hub. Made with</span>
-                <Heart className="w-4 h-4 mx-2 text-pink-500 animate-pulse" />
+                <Heart className="w-3 h-3 md:w-4 md:h-4 mx-2 text-pink-500 animate-pulse" />
                 <span>by Gourav Chaudhary</span>
               </div>
 
               {/* Scroll to top button */}
               <button
                 onClick={scrollToTop}
-                className="group bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-pink-500 hover:bg-pink-600 text-white p-2 md:p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <ArrowUp className="h-5 w-5" />
+                <ArrowUp className="h-4 w-4 md:h-5 md:w-5" />
               </button>
             </div>
           </div>
@@ -146,7 +146,7 @@ const Footer = () => {
 const SocialIcon = ({ icon, href }) => (
   <a 
     href={href}
-    className="bg-white p-3 rounded-full hover:bg-pink-500 hover:text-white text-pink-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+    className="bg-white p-2 md:p-3 rounded-full hover:bg-pink-500 hover:text-white text-pink-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -156,11 +156,11 @@ const SocialIcon = ({ icon, href }) => (
 
 // Contact Item Component
 const ContactItem = ({ icon, text }) => (
-  <li className="flex items-center space-x-3 group">
-    <div className="text-pink-400 transform group-hover:scale-110 transition-transform duration-300">
-      {React.cloneElement(icon, { size: 20 })}
+  <li className="flex items-start space-x-2 md:space-x-3 group">
+    <div className="text-pink-400 transform group-hover:scale-110 transition-transform duration-300 mt-0.5">
+      {React.cloneElement(icon, { size: 16, className: "md:w-5 md:h-5" })}
     </div>
-    <span className="text-gray-600 group-hover:text-pink-600 transition-colors duration-300">
+    <span className="text-gray-600 group-hover:text-pink-600 transition-colors duration-300 text-sm md:text-base">
       {text}
     </span>
   </li>

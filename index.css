@@ -1,3 +1,158 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS for better responsive design */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Custom line-clamp utility */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #c084fc;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a855f7;
+  }
+  
+  /* Mobile-first focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2;
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Responsive text utilities */
+  .text-responsive-sm {
+    @apply text-sm md:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base md:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg md:text-xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl md:text-2xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  /* Responsive spacing utilities */
+  .space-responsive-sm {
+    @apply space-y-2 md:space-y-3;
+  }
+  
+  .space-responsive-base {
+    @apply space-y-3 md:space-y-4;
+  }
+  
+  .space-responsive-lg {
+    @apply space-y-4 md:space-y-6;
+  }
+  
+  /* Responsive padding utilities */
+  .p-responsive-sm {
+    @apply p-3 md:p-4;
+  }
+  
+  .p-responsive-base {
+    @apply p-4 md:p-6;
+  }
+  
+  .p-responsive-lg {
+    @apply p-6 md:p-8;
+  }
+  
+  /* Responsive margin utilities */
+  .m-responsive-sm {
+    @apply m-2 md:m-3;
+  }
+  
+  .m-responsive-base {
+    @apply m-3 md:m-4;
+  }
+  
+  .m-responsive-lg {
+    @apply m-4 md:m-6;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for responsive design */
+  .container-responsive {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+  }
+  
+  .flex-responsive {
+    @apply flex flex-col md:flex-row;
+  }
+  
+  .text-responsive {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+  
+  .heading-responsive {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+  
+  .subheading-responsive {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold;
+  }
+}
