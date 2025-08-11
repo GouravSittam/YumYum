@@ -54,13 +54,13 @@ const Header = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center px-4 py-2">
           {/* Logo Section */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               className="w-20 h-25 md:w-28 md:h-28 object-contain transition-transform duration-300 hover:scale-105" 
               src={LOGO_URL}
-              alt="Logo" 
+              alt="YumYum Home" 
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
