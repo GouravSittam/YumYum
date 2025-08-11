@@ -156,3 +156,83 @@
     @apply text-lg md:text-xl lg:text-2xl font-semibold;
   }
 }
+
+/* Fancy hero hover effects */
+@layer components {
+  .fancy-hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fancy-hero::before {
+    content: "";
+    position: absolute;
+    inset: -25%;
+    background:
+      radial-gradient(60rem 30rem at 20% 20%, rgba(255, 255, 255, 0.18), transparent 60%),
+      radial-gradient(50rem 25rem at 80% 40%, rgba(255, 255, 255, 0.12), transparent 60%),
+      radial-gradient(40rem 20rem at 50% 80%, rgba(255, 255, 255, 0.10), transparent 60%);
+    filter: blur(30px);
+    transition: transform 600ms ease, opacity 600ms ease;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .fancy-hero:hover::before {
+    transform: scale(1.04) rotate(1deg);
+    opacity: 1;
+  }
+
+  .text-hero {
+    background: linear-gradient(90deg, #ffffff 0%, #ffe4f7 40%, #ffffff 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 220% 100%;
+    transition: transform 500ms ease, letter-spacing 500ms ease, text-shadow 500ms ease, opacity 400ms ease;
+    text-shadow: 0 2px 16px rgba(255, 255, 255, 0.25);
+    will-change: transform, background-position, letter-spacing;
+  }
+
+  .group:hover .text-hero {
+    animation: heroShine 1.6s ease-out;
+    letter-spacing: 0.5px;
+    transform: translateY(-2px) scale(1.03);
+    text-shadow: 0 0 28px rgba(255, 255, 255, 0.55);
+  }
+
+  .underline-hero {
+    height: 4px;
+    width: 64px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.85), rgba(255,255,255,0.2));
+    border-radius: 9999px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.35);
+    transition: width 500ms ease, box-shadow 500ms ease, transform 500ms ease;
+  }
+
+  .group:hover .underline-hero {
+    width: 144px;
+    box-shadow: 0 0 36px rgba(255,255,255,0.6);
+    transform: translateY(2px);
+  }
+
+  .text-subhero {
+    opacity: 0.9;
+    transition: opacity 400ms ease, transform 500ms ease, letter-spacing 500ms ease;
+  }
+
+  .group:hover .text-subhero {
+    opacity: 1;
+    transform: translateY(-1px);
+    letter-spacing: 0.3px;
+  }
+}
+
+@keyframes heroShine {
+  0% {
+    background-position: 180% 0;
+  }
+  100% {
+    background-position: -80% 0;
+  }
+}

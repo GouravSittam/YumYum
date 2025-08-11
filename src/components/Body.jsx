@@ -56,12 +56,13 @@ const Body = () => {
   ) : (
     <div className="body bg-pink-50 mt-28 min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-pink-400 to-purple-500 text-white py-12 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+      <div className="bg-gradient-to-r from-pink-400 to-purple-500 text-white py-14 px-4 fancy-hero">
+        <div className="max-w-7xl mx-auto text-center group">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-3 tracking-tight text-hero">
             Discover Amazing Restaurants
           </h1>
-          <p className="text-lg md:text-xl mb-8 opacity-90">
+          <div className="underline-hero mx-auto"></div>
+          <p className="text-lg md:text-xl mt-6 mb-8 text-subhero">
             Order from the best restaurants in your area
           </p>
         </div>
