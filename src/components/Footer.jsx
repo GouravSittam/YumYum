@@ -137,6 +137,7 @@ const Footer = () => {
             </ul>
           </div>
 
+
           {/* Newsletter */}
           <div className="space-y-4 md:space-y-6">
             <h4 className="text-lg md:text-xl font-semibold text-pink-600">
