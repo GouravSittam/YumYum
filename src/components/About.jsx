@@ -57,8 +57,8 @@ const AboutMe = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mt-4 md:mt-6">
                   <ContactItem icon={<Mail className="text-pink-500" />} text="gourav@example.com" />
                   <ContactItem icon={<Phone className="text-pink-500" />} text="+91 98765 43210" />
-                  <ContactItem icon={<Github className="text-pink-500" />} text="github.com/gourav" />
-                  <ContactItem icon={<Linkedin className="text-pink-500" />} text="linkedin.com/in/gourav" />
+                  <ContactLink icon={<Github className="text-pink-500" />} text="github.com/GouravSittam" href="https://github.com/GouravSittam" />
+                  <ContactLink icon={<Linkedin className="text-pink-500" />} text="linkedin.com/in/gouravsittam" href="https://www.linkedin.com/in/gouravsittam/" />
                 </div>
               </div>
             )}
@@ -93,6 +93,18 @@ const ContactItem = ({ icon, text }) => (
     {icon}
     <span className="text-gray-700 text-sm md:text-base">{text}</span>
   </div>
+);
+
+const ContactLink = ({ icon, text, href }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center space-x-3 p-3 md:p-4 bg-gray-50 rounded-xl hover:bg-pink-50 transition-colors duration-300 hover:underline"
+  >
+    {icon}
+    <span className="text-gray-700 text-sm md:text-base">{text}</span>
+  </a>
 );
 
 const SkillCard = ({ title, icon, skills }) => (

@@ -51,13 +51,13 @@ const Contact = () => {
             </div>
 
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/Yum-Yum-Restaurant-and-Cafe-10991667880184/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
+              <a href="https://www.facebook.com/profile.php?id=100011433522248" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
                 <Facebook className="w-6 h-6 md:w-7 md:h-7 hover:text-blue-300 transition-colors" />
               </a>
-              <a href="https://www.instagram.com/yummyumcafe/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
+              <a href="https://www.instagram.com/gouravv.c/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
                 <Instagram className="w-6 h-6 md:w-7 md:h-7 hover:text-pink-300 transition-colors" />
               </a>
-              <a href="https://twitter.com/yummyumcafe" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
+              <a href="https://x.com/Gouravv_c" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
                 <Twitter className="w-6 h-6 md:w-7 md:h-7 hover:text-blue-400 transition-colors" />
               </a>
             </div>

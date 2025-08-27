@@ -5,7 +5,7 @@ import {
   Twitter, 
   Instagram, 
   Linkedin, 
-  Youtube,
+  Github,
   Mail, 
   Phone, 
   MapPin,
@@ -49,11 +49,11 @@ const Footer = () => {
                 your cravings, delivering delicious possibilities every day.
               </p>
               <div className="flex space-x-3 md:space-x-4">
-                <SocialIcon icon={<Facebook size={16} className="md:w-5 md:h-5" />} href="#" />
-                <SocialIcon icon={<Twitter size={16} className="md:w-5 md:h-5" />} href="#" />
-                <SocialIcon icon={<Instagram size={16} className="md:w-5 md:h-5" />} href="#" />
-                <SocialIcon icon={<Linkedin size={16} className="md:w-5 md:h-5" />} href="#" />
-                <SocialIcon icon={<Youtube size={16} className="md:w-5 md:h-5" />} href="#" />
+                <SocialIcon icon={<Facebook size={16} className="md:w-5 md:h-5" />} href="https://www.facebook.com/profile.php?id=100011433522248" />
+                <SocialIcon icon={<Twitter size={16} className="md:w-5 md:h-5" />} href="https://x.com/Gouravv_c" />
+                <SocialIcon icon={<Instagram size={16} className="md:w-5 md:h-5" />} href="https://www.instagram.com/gouravv.c/" />
+                <SocialIcon icon={<Linkedin size={16} className="md:w-5 md:h-5" />} href="https://www.linkedin.com/in/gouravsittam/" />
+                <SocialIcon icon={<Github size={16} className="md:w-5 md:h-5" />} href="https://github.com/GouravSittam" />
               </div>
             </div>
 
