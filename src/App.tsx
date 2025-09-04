@@ -19,15 +19,7 @@ import Test from "./components/Test";
 import { tsSmoke } from "./ts-smoke";
 console.debug("TS smoke:", tsSmoke);
 
-const AppLayout: FC = () => (
-  <Provider store={AppStore}>
-    <Header />
-    <RouterProvider router={appRouter} />
-    <Footer />
-  </Provider>
-);
-
-const appRouter: RouteObject[] = [
+const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Body />,
@@ -57,13 +49,23 @@ const appRouter: RouteObject[] = [
     path: "/test",
     element: <Test />,
   },
-];
+]);
 
-const rootElement = document.getElementById("root") as HTMLElement | null;
+const AppLayout: FC = () => (
+  <Provider store={AppStore}>
+    <Header />
+    <RouterProvider router={appRouter} />
+    <Footer />
+  </Provider>
+);
+
+const rootElement = document.getElementById("root");
 if (rootElement) {
   import("react-dom/client").then(({ createRoot }) => {
     createRoot(rootElement).render(<AppLayout />);
   });
 } else {
-  throw new Error('Root element with id "root" not found');
+  throw new (Object.getPrototypeOf(Error))(
+    'Root element with id "root" not found'
+  );
 }
