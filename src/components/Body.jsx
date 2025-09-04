@@ -109,89 +109,10 @@ const Body = () => {
       setFilteredRestaurants(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);
-      // Fallback to mock data if API fails
-  //     const mockRestaurants = [
-  //       {
-  //         info: {
-  //           id: "1",
-  //           name: "Pizza Palace",
-  //           avgRating: 4.5,
-  //           cuisines: ["Italian", "Pizza", "Fast Food"],
-  //           areaName: "Downtown",
-  //           sla: { deliveryTime: 30 },
-  //           cloudinaryImageId: "pizza-image",
-  //           costForTwo: "₹300 for two",
-  //           promoted: true
-  //         }
-  //       },
-  //       {
-  //         info: {
-  //           id: "2",
-  //           name: "Burger Barn",
-  //           avgRating: 4.2,
-  //           cuisines: ["American", "Burgers", "Fast Food"],
-  //           areaName: "City Center",
-  //           sla: { deliveryTime: 25 },
-  //           cloudinaryImageId: "burger-image",
-  //           costForTwo: "₹250 for two"
-  //         }
-  //       },
-  //       {
-  //         info: {
-  //           id: "3",
-  //           name: "Sushi Sensation",
-  //           avgRating: 4.7,
-  //           cuisines: ["Japanese", "Sushi", "Asian"],
-  //           areaName: "Uptown",
-  //           sla: { deliveryTime: 45 },
-  //           cloudinaryImageId: "sushi-image",
-  //           costForTwo: "₹800 for two"
-  //         }
-  //       },
-  //       {
-  //         info: {
-  //           id: "4",
-  //           name: "Taco Fiesta",
-  //           avgRating: 4.3,
-  //           cuisines: ["Mexican", "Tacos", "Spicy"],
-  //           areaName: "West Side",
-  //           sla: { deliveryTime: 35 },
-  //           cloudinaryImageId: "taco-image",
-  //           costForTwo: "₹400 for two"
-  //         }
-  //       },
-  //       {
-  //         info: {
-  //           id: "5",
-  //           name: "Curry Corner",
-  //           avgRating: 4.6,
-  //           cuisines: ["Indian", "Curry", "Spicy"],
-  //           areaName: "Little India",
-  //           sla: { deliveryTime: 40 },
-  //           cloudinaryImageId: "curry-image",
-  //           costForTwo: "₹350 for two"
-  //         }
-  //       },
-  //       {
-  //         info: {
-  //           id: "6",
-  //           name: "Pasta Paradise",
-  //           avgRating: 4.4,
-  //           cuisines: ["Italian", "Pasta", "European"],
-  //           areaName: "Old Town",
-  //           sla: { deliveryTime: 35 },
-  //           cloudinaryImageId: "pasta-image",
-  //           costForTwo: "₹450 for two"
-  //         }
-  //       }
-  //     ];
-      
-  //     setListOfRestaurants(mockRestaurants);
-  //     setFilteredRestaurants(mockRestaurants);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleSearch = () => {
     const filtered = listOfRestaurants.filter((restaurant) =>
