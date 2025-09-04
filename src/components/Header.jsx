@@ -16,7 +16,8 @@ import {
   Settings,
   LogOut,
   LogIn,
-  X
+  X,
+  Github
 } from "lucide-react";
 
 const NavLink = ({ to, icon, text, isActive = false }) => (
@@ -125,6 +126,18 @@ const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
+            {/* GitHub Button */}
+            <a
+              href="https://github.com/GouravSittam/YumYum"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-orange-500 transition-colors duration-200 rounded-lg hover:bg-orange-50"
+              aria-label="View on GitHub"
+            >
+              <Github size={20} />
+              <span className="hidden xl:inline font-medium">GitHub</span>
+            </a>
+
             {/* Notifications */}
             <button className="relative p-2 text-gray-600 hover:text-gray-900 transition-colors">
               <Bell size={20} />
@@ -228,6 +241,18 @@ const Header = () => {
                   />
 
                   <div className="w-full h-px bg-gray-200 my-4"></div>
+
+                  {/* Mobile GitHub Link */}
+                  <a 
+                    href="https://github.com/GouravSittam/YumYum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Github size={20} />
+                    <span className="font-medium">View on GitHub</span>
+                  </a>
 
                   {/* Mobile Cart */}
                   <Link 
