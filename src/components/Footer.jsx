@@ -123,7 +123,7 @@ const Footer = () => {
 
                     {/* Facebook */}
                     <a
-                        href="#"
+                        href="https://www.facebook.com/share/1FNBxJqc9y/?mibextid=wwXIfr"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Facebook"
