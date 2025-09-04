@@ -1,3 +1,7 @@
+import { tsSmoke } from "./ts-smoke";
+console.debug("TS smoke:", tsSmoke);
+// TypeScript smoke test import for Parcel integration
+import "../src/ts-smoke";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";

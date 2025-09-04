@@ -4,19 +4,22 @@
   "description": "This is my Food App",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "type-check": "tsc -p tsconfig.json --noEmit",
+    "build": "pnpm run type-check && parcel build index.html",
     "test": "jest"
-    
   },
   "author": "Gourav Chaudhary",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.19.13",
     "@types/react": "^18.3.11",
+    "@types/react-dom": "^19.1.9",
     "parcel": "^2.12.0",
     "postcss": "^8.4.47",
     "prettier": "3.3.3",
     "process": "^0.11.10",
-    "tailwindcss": "^3.4.13"
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
