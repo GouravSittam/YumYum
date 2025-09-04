@@ -1,3 +1,4 @@
+// File migrated to Body.tsx and can be safely removed.
 import RestaurantCards, { WithPromtedFunction } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -44,8 +45,12 @@ const Body = () => {
       <div className="min-h-screen flex items-center justify-center bg-pink-50 mt-28">
         <div className="text-center p-8">
           <div className="text-6xl mb-4">📡</div>
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Looks like you're offline!</h1>
-          <p className="text-gray-600">Please check your internet connection and try again.</p>
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">
+            Looks like you're offline!
+          </h1>
+          <p className="text-gray-600">
+            Please check your internet connection and try again.
+          </p>
         </div>
       </div>
     );
@@ -126,7 +131,11 @@ const Body = () => {
         {/* Results Count */}
         <div className="mb-6">
           <p className="text-gray-600">
-            Found <span className="font-semibold text-pink-600">{filteredRestaurant.length}</span> restaurants
+            Found{" "}
+            <span className="font-semibold text-pink-600">
+              {filteredRestaurant.length}
+            </span>{" "}
+            restaurants
           </p>
         </div>
 
@@ -147,8 +156,12 @@ const Body = () => {
         {filteredRestaurant.length === 0 && (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🍽️</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">No restaurants found</h3>
-            <p className="text-gray-600">Try adjusting your search terms or filters</p>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              No restaurants found
+            </h3>
+            <p className="text-gray-600">
+              Try adjusting your search terms or filters
+            </p>
           </div>
         )}
       </div>

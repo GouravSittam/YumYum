@@ -1,3 +1,4 @@
+// File migrated to Header.tsx and can be safely removed.
 import React, { useState, useEffect, useContext } from "react";
 import { LOGO_URL } from "../Utils/constants";
 import { Link } from "react-router-dom";
@@ -31,22 +32,22 @@ const Header = () => {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const closeMenu = (e) => {
-      if (isMobileMenuOpen && !e.target.closest('.mobile-menu-container')) {
+      if (isMobileMenuOpen && !e.target.closest(".mobile-menu-container")) {
         setIsMobileMenuOpen(false);
       }
     };
 
     if (isMobileMenuOpen) {
-      document.addEventListener('click', closeMenu);
+      document.addEventListener("click", closeMenu);
     }
 
     return () => {
-      document.removeEventListener('click', closeMenu);
+      document.removeEventListener("click", closeMenu);
     };
   }, [isMobileMenuOpen]);
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white"
       }`}
@@ -55,10 +56,10 @@ const Header = () => {
         <div className="flex justify-between items-center px-4 py-2">
           {/* Logo Section */}
           <Link to="/" className="flex items-center">
-            <img 
-              className="w-20 h-25 md:w-28 md:h-28 object-contain transition-transform duration-300 hover:scale-105" 
+            <img
+              className="w-20 h-25 md:w-28 md:h-28 object-contain transition-transform duration-300 hover:scale-105"
               src={LOGO_URL}
-              alt="YumYum Home" 
+              alt="YumYum Home"
             />
           </Link>
 
@@ -67,7 +68,9 @@ const Header = () => {
             <nav className="flex items-center space-x-6">
               {/* Online Status Indicator */}
               <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1 rounded-full">
-                <span className={`w-3 h-3 rounded-full ${onlineStatus ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                <span
+                  className={`w-3 h-3 rounded-full ${onlineStatus ? "bg-green-500" : "bg-red-500"}`}
+                ></span>
                 <span className="text-sm font-medium text-gray-600">
                   {onlineStatus ? "Online" : "Offline"}
                 </span>
@@ -76,11 +79,15 @@ const Header = () => {
               {/* Navigation Links */}
               <NavLink to="/" icon={<Home size={18} />} text="Home" />
               <NavLink to="/about" icon={<Info size={18} />} text="About" />
-              <NavLink to="/contact" icon={<Phone size={18} />} text="Contact" />
-              
+              <NavLink
+                to="/contact"
+                icon={<Phone size={18} />}
+                text="Contact"
+              />
+
               {/* Cart Button */}
-              <Link 
-                to="/cart" 
+              <Link
+                to="/cart"
                 className="flex items-center space-x-2 px-4 py-2 bg-pink-50 rounded-full hover:bg-pink-100 transition-colors duration-300"
               >
                 <ShoppingCart size={18} className="text-pink-500" />
@@ -98,22 +105,26 @@ const Header = () => {
                       : "bg-red-500 text-white hover:bg-red-600"
                   }`}
                   onClick={() => {
-                    setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
+                    setBtnNameReact(
+                      btnNameReact === "Login" ? "Logout" : "Login"
+                    );
                   }}
                 >
                   {btnNameReact}
                 </button>
-                
+
                 <div className="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-full">
                   <User size={18} className="text-gray-600" />
-                  <span className="font-medium text-gray-700">{loggedInUser}</span>
+                  <span className="font-medium text-gray-700">
+                    {loggedInUser}
+                  </span>
                 </div>
               </div>
             </nav>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden p-2 rounded-lg hover:bg-gray-100"
             onClick={handleMenuToggle}
             aria-label="Toggle mobile menu"
@@ -132,28 +143,28 @@ const Header = () => {
             <div className="px-4 py-2">
               {/* Mobile Navigation Links */}
               <div className="flex flex-col space-y-2">
-                <MobileNavLink 
-                  to="/" 
-                  icon={<Home size={18} />} 
-                  text="Home" 
+                <MobileNavLink
+                  to="/"
+                  icon={<Home size={18} />}
+                  text="Home"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
-                <MobileNavLink 
-                  to="/about" 
-                  icon={<Info size={18} />} 
-                  text="About" 
+                <MobileNavLink
+                  to="/about"
+                  icon={<Info size={18} />}
+                  text="About"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
-                <MobileNavLink 
-                  to="/contact" 
-                  icon={<Phone size={18} />} 
-                  text="Contact" 
+                <MobileNavLink
+                  to="/contact"
+                  icon={<Phone size={18} />}
+                  text="Contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
-                
+
                 {/* Mobile Cart Link */}
-                <Link 
-                  to="/cart" 
+                <Link
+                  to="/cart"
                   className="flex items-center justify-between px-4 py-3 bg-pink-50 rounded-lg hover:bg-pink-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -170,7 +181,9 @@ const Header = () => {
                 <div className="flex flex-col space-y-2 pt-2 border-t">
                   <div className="flex items-center space-x-2 px-4 py-3 bg-gray-100 rounded-lg">
                     <User size={18} className="text-gray-600" />
-                    <span className="font-medium text-gray-700">{loggedInUser}</span>
+                    <span className="font-medium text-gray-700">
+                      {loggedInUser}
+                    </span>
                   </div>
                   <button
                     className={`w-full px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
@@ -179,7 +192,9 @@ const Header = () => {
                         : "bg-red-500 text-white hover:bg-red-600"
                     }`}
                     onClick={() => {
-                      setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
+                      setBtnNameReact(
+                        btnNameReact === "Login" ? "Logout" : "Login"
+                      );
                       setIsMobileMenuOpen(false);
                     }}
                   >
@@ -197,8 +212,8 @@ const Header = () => {
 
 // Desktop NavLink Component
 const NavLink = ({ to, icon, text }) => (
-  <Link 
-    to={to} 
+  <Link
+    to={to}
     className="flex items-center space-x-2 px-4 py-2 rounded-full hover:bg-gray-100 transition-colors duration-300"
   >
     <span className="text-gray-600">{icon}</span>
@@ -208,8 +223,8 @@ const NavLink = ({ to, icon, text }) => (
 
 // Mobile NavLink Component
 const MobileNavLink = ({ to, icon, text, onClick }) => (
-  <Link 
-    to={to} 
+  <Link
+    to={to}
     className="flex items-center space-x-2 px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300"
     onClick={onClick}
   >

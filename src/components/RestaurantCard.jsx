@@ -1,3 +1,4 @@
+// File migrated to RestaurantCard.tsx and can be safely removed.
 import { CDN_URl } from "../Utils/constants";
 import { useContext } from "react";
 import UserContext from "../Utils/UserContext";
@@ -19,7 +20,6 @@ const RestaurantContainer = ({ children }) => {
 const RestaurantCards = (props) => {
   const { resData } = props;
   const { loggedInUser } = useContext(UserContext);
-  
 
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resData?.info;
@@ -38,9 +38,11 @@ const RestaurantCards = (props) => {
           {/* Delivery Time Badge */}
           <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium shadow-lg flex items-center gap-1">
             <Clock className="w-4 h-4 text-gray-600" />
-            <span className="text-gray-700">{resData.info.sla.deliveryTime} mins</span>
+            <span className="text-gray-700">
+              {resData.info.sla.deliveryTime} mins
+            </span>
           </div>
-          
+
           {/* Rating Badge */}
           <div className="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-lg">
             <Star size={14} className="fill-current" />
